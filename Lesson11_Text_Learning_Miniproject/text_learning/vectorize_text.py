@@ -61,9 +61,9 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
             # ## append the text to word_data
             word_data.append(emailText)
             # ## append a 0 to from_data if email is from Sara, and 1 if email is from Chris
-            if from_person == "Sara":
+            if name == "sara":
                 from_data.append(0)
-            elif from_person == "Chris":
+            elif name == "chris":
                 from_data.append(1)
             else:
                 from_data.append(2)
@@ -73,6 +73,7 @@ print(word_data[152])
 print ("emails processed")
 from_sara.close()
 from_chris.close()
+print(from_data)
 
 pickle.dump( word_data, open("your_word_data.pkl", "wb") )
 pickle.dump( from_data, open("your_email_authors.pkl", "wb") )
